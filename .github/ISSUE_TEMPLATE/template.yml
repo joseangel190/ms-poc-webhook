@@ -2,9 +2,6 @@ name: Ephemeral Environment
 description: Formulario para la creacion de ambientes efimeros.
 title: "[EE]: "
 labels: ["main", "Certification", "ephemeral"]
-projects: [""]
-assignees: [""]
-type: ephemeral
 body:
   - type: markdown
     attributes:
