@@ -6,11 +6,11 @@ on:
       environment:
         description: 'Environment'
         required: true
-        default: 'Integration'
+        default: 'integration'
         type: choice
         options:
-        - Integration
-        - Certification
+        - integration
+        - certification
       branch:
         required: true
         type: string
@@ -31,4 +31,4 @@ jobs:
             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
             https://api.github.com/repos/${{ github.repository }}/issues \
-            -d '{"title":"[EE] ${{ github.event.repository.name }}","body":"Deploy Ephemeral Environments: \n#### Dependencies \nl1${{ github.event.repository.name }}:${{ inputs.branch }} \nl1${{ inputs.dependencies-l1 }}","assignees":["'"${{ github.actor }}"'"],"labels":["ephemeral", "main", "'"${{ inputs.environment }}"'"]}'
+            -d '{"title":"[EE] ${{ github.event.repository.name }}","body":"Deploy Ephemeral Environments: \n#### Dependencies \nl1${{ github.event.repository.name }};${{ inputs.branch }}|${{ inputs.dependencies-l1 }}","assignees":["'"${{ github.actor }}"'"],"labels":["ephemeral", "main", "'"${{ inputs.environment }}"'"]}'
