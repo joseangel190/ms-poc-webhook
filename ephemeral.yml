@@ -1,4 +1,4 @@
-rootID: "ms-poc-webhook"
+rootID: "ms-ne-poc-webhook"
 
 modules:
 
@@ -6,9 +6,9 @@ modules:
     ref: "main"
     type: "ms"
     needs:
-      - "api-ne-gestion-clientes"
+      - "api-ne-poc-webhook"
 
-  api-poc-webhook:
+  api-ne-poc-webhook:
     ref: "main"
     type: "api"
     needs: []
